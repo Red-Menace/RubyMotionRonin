@@ -1,0 +1,27 @@
+# encoding: utf-8
+
+#
+#  Project 'User Defaults'
+#
+
+
+$:.unshift('/Library/RubyMotion/lib')
+require 'motion/project/template/osx'
+
+begin
+   require 'bundler'
+   Bundler.require
+rescue LoadError
+end
+
+# See RubyMotion Project Management Guide
+# also 'rake config' for complete project settings
+Motion::Project::App.setup do |app|
+   app.frameworks = %w[Foundation AppKit]  # system frameworks
+   app.icon = 'AppIcon'  # CFBundleIconFile
+   app.identifier = 'com.your-company.rmsample.userdefaults'  # CFBundleIdentifier
+   app.name = 'User Defaults'  # CFBundleName
+   app.short_version = '1.0.0'  # CFBundleShortVersionString
+   app.version = '1.000'  # CFBundleVersion
+end
+

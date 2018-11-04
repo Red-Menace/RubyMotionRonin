@@ -1,0 +1,18 @@
+
+/* 
+   Project 'User Defaults'  --  Localizable.strings
+      
+*/
+
+
+/* error message strings */
+
+/* unspecified error */
+"ERROR_Unspecified" = "unspecified";
+
+
+/* user interface items */
+
+/* button titles */
+"OK" = "OK";
+"Cancel" = "Cancel";
