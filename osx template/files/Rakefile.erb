@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/osx'
+
+begin
+  require 'bundler'
+  Bundler.require
+rescue LoadError
+end
+
+# See RubyMotion Project Management Guide:
+#     http://www.rubymotion.com/developers/guides/manuals/cocoa/project-management/
+
+Motion::Project::App.setup do |app|  # (un)comment and change <items> as desired
+   # Use `rake config' for complete project settings.
+
+   # app.category = 'utilities'  # LSApplicationCategoryType
+   # app.copyright = 'Copyright © <year> <user>. All rights reserved.'  # NSHumanReadableCopyright
+   # app.deployment_target = "<current system>"  # LSMinimumSystemVersion
+   # app.entitlements = {}
+   # app.frameworks = ['AppKit', 'Foundation', 'CoreServices']
+   app.icon = 'AppIcon'  # CFBundleIconFile
+   app.identifier = 'com.yourcompany.<%= name %>'  # CFBundleIdentifier
+   app.name = '<%= name %>'  # CFBundleName
+   # app.sdk_version = '<SDK to use>'
+   # app.short_version = '1.0.0'  # CFBundleShortVersionString (release version number)
+   # app.version = '1.0.0'  # CFBundleVersion (build version number)
+
+   # app.info_plist['NSMainNibFile'] = 'MainMenu'  # minimal main nib file, if using nibs
+   # app.info_plist['key'] = ['value']  # other custom Info.plist key/value pairs
+
+   # app.vendor_project(<library path>, <project type>)
+
+   # app.codesign_for_development = true
+   # app.development do
+     # app.codesign_certificate = 'Mac Developer: xxxxx'
+   # end
+
+   # app.codesign_for_release = true
+   # app.release do
+     # app.codesign_certificate = '3rd Party Mac Developer Application: xxxxx'
+   # end
+
+end
+
