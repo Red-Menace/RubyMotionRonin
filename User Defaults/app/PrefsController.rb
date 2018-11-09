@@ -181,7 +181,6 @@ class PrefsController
       checkbox = NSButton.alloc.initWithFrame(TEXT_FRAME).tap do |check|
          check.frameOrigin = [position[0], position[1] + offset]
          check.buttonType = NSSwitchButton
-         check.state = @sheet
          check.title = name
       end
       @prefsWindow.contentView.addSubview checkbox
