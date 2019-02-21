@@ -17,7 +17,6 @@ end
 # See RubyMotion Project Management Guide
 # also 'rake config' for complete project settings
 Motion::Project::App.setup do |app|
-   app.frameworks = %w[Foundation AppKit]  # system frameworks
    app.icon = 'AppIcon'  # CFBundleIconFile
    app.identifier = 'com.your-company.rmsample.userdefaults'  # CFBundleIdentifier
    app.name = 'User Defaults'  # CFBundleName
