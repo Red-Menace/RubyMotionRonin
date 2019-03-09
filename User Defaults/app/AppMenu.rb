@@ -100,16 +100,6 @@ class AppDelegate # add to existing class
          addItem(speech_menu)
       end
 
-      fontMenu = createMenu('Font') do # Format menu submenu
-         addItemWithTitle('Show Fonts', action: 'orderFrontFontPanel:', keyEquivalent: 't')
-         addItemWithTitle('Bold', action: 'addFontTrait:', keyEquivalent: 'b')
-         addItemWithTitle('Italic', action: 'addFontTrait:', keyEquivalent: 'i')
-         addItemWithTitle('Underline', action: 'underline:', keyEquivalent: 'u')
-         addItem(NSMenuItem.separatorItem)
-         addItemWithTitle('Bigger', action: 'modifyFont:', keyEquivalent: '+')
-         addItemWithTitle('Smaller', action: 'modifyFont:', keyEquivalent: '-')
-      end
-
       textMenu = createMenu('Text') do # Format menu submenu
          addItemWithTitle('Align Left', action: 'alignLeft:', keyEquivalent: '{')
          addItemWithTitle('Center', action: 'alignCenter:', keyEquivalent: '|')
@@ -124,7 +114,8 @@ class AppDelegate # add to existing class
       end
 
       addMenu('Format') do
-         addItem fontMenu
+         item = addItemWithTitle('Font', action: nil, keyEquivalent: '')
+         item.submenu = NSFontManager.sharedFontManager.fontMenu(true)
          addItem textMenu
       end
 
