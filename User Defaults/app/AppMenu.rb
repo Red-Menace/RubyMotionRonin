@@ -11,10 +11,9 @@ class AppDelegate # add to existing class
    # Build the main application menu.
    def buildMenu
       @mainMenu = NSMenu.new
-
       appName = NSBundle.mainBundle.infoDictionary['CFBundleName']
       
-      find_menu = createMenu('Find') do  # Edit menu submrnu
+      find_menu = createMenu('Find') do  # 'Edit' submenu
          addItemWithTitle('Find...', action: 'performFindPanelAction:', keyEquivalent: 'f')
          addItemWithTitle('Find Next', action: 'performFindPanelAction:', keyEquivalent: 'g')
          addItemWithTitle('Find Previous', action: 'performFindPanelAction:', keyEquivalent: 'G')
@@ -22,7 +21,7 @@ class AppDelegate # add to existing class
          addItemWithTitle('Jump to Selection', action: 'centerSelectionInVisibleArea:', keyEquivalent: 'j')
       end
 
-      spelling_and_grammar_menu = createMenu('Spelling and Grammar') do  # Edit menu submrnu
+      spelling_and_grammar_menu = createMenu('Spelling and Grammar') do  # 'Edit' submenu
          addItemWithTitle('Show Spelling and Grammar', action: 'showGuessPanel:', keyEquivalent: ':')
          addItemWithTitle('Check Document Now', action: 'checkSpelling:', keyEquivalent: ';')
          addItem(NSMenuItem.separatorItem)
@@ -31,7 +30,7 @@ class AppDelegate # add to existing class
          addItemWithTitle('Correct Spelling Automatically', action: 'toggleAutomaticSpellingCorrection:', keyEquivalent: '')
       end
 
-      substitutions_menu = createMenu('Substitutions') do  # Edit menu submrnu
+      substitutions_menu = createMenu('Substitutions') do  # 'Edit' submenu
          addItemWithTitle('Show Substitutions', action: 'orderFrontSubstitutionsPanel:', keyEquivalent: 'f')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle('Smart Copy/Paste', action: 'toggleSmartInsertDelete:', keyEquivalent: 'f')
@@ -41,20 +40,19 @@ class AppDelegate # add to existing class
          addItemWithTitle('Text Replacement', action: 'toggleAutomaticTextReplacement:', keyEquivalent: '')
       end
 
-      transformations_menu = createMenu('Transformations') do  # Edit menu submrnu
+      transformations_menu = createMenu('Transformations') do  # 'Edit' submenu
          addItemWithTitle('Make Upper Case', action: 'uppercaseWord:', keyEquivalent: '')
          addItemWithTitle('Make Lower Case', action: 'lowercaseWord:', keyEquivalent: '')
          addItemWithTitle('Capitalize', action: 'capitalizeWord:', keyEquivalent: '')
          end
 
-      speech_menu = createMenu('Speech') do  # Edit menu submrnu
+      speech_menu = createMenu('Speech') do  # 'Edit' submenu
          addItemWithTitle('Start Speaking', action: 'startSpeaking:', keyEquivalent: '')
          addItemWithTitle('Stop Speaking', action: 'stopSpeaking:', keyEquivalent: '')
       end
 
       addMenu(appName) do
          addItemWithTitle("About #{appName}", action: 'orderFrontStandardAboutPanel:', keyEquivalent: '')
-         # addItemWithTitle('Check for Update', action: 'checkForUpdate:', keyEquivalent: '')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle('Preferences', action: 'openPreferences:', keyEquivalent: ',')
          addItem(NSMenuItem.separatorItem)
@@ -93,6 +91,7 @@ class AppDelegate # add to existing class
          addItemWithTitle('Delete', action: 'delete:', keyEquivalent: '')
          addItemWithTitle('Select All', action: 'selectAll:', keyEquivalent: 'a')
          addItem(NSMenuItem.separatorItem)
+         
          addItem(find_menu)
          addItem(spelling_and_grammar_menu)
          addItem(substitutions_menu)
@@ -115,7 +114,7 @@ class AppDelegate # add to existing class
 
       addMenu('Format') do
          item = addItemWithTitle('Font', action: nil, keyEquivalent: '')
-         item.submenu = NSFontManager.sharedFontManager.fontMenu(true)
+         item.submenu = NSFontManager.sharedFontManager.fontMenu(true)  # system provided
          addItem textMenu
       end
 
@@ -130,11 +129,11 @@ class AppDelegate # add to existing class
          addItemWithTitle('Zoom', action: 'performZoom:', keyEquivalent: '')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle('Bring All To Front', action: 'arrangeInFront:', keyEquivalent: '')
-      end.submenu
+      end.submenu  # declare for system
 
       NSApp.helpMenu = addMenu('Help') do
          addItemWithTitle("#{appName} Help", action: 'showHelp:', keyEquivalent: '?')
-      end.submenu
+      end.submenu  # declare for system
 
       NSApp.mainMenu = @mainMenu
    end
