@@ -15,10 +15,10 @@ class AppDelegate
     appName = NSBundle.mainBundle.infoDictionary['CFBundleName']
 
     find_menu = createMenu('Find') do
-      addItemWithTitle('Find...', action: 'performFindPanelAction:', keyEquivalent: 'f')
-      addItemWithTitle('Find Next', action: 'performFindPanelAction:', keyEquivalent: 'g')
-      addItemWithTitle('Find Previous', action: 'performFindPanelAction:', keyEquivalent: 'G')
-      addItemWithTitle('Use Selection for Find', action: 'performFindPanelAction:', keyEquivalent: 'e')
+      addItemWithTitle('Find...', action: 'performFindPanelAction:', keyEquivalent: 'f').tag = 1
+      addItemWithTitle('Find Next', action: 'performFindPanelAction:', keyEquivalent: 'g').tag = 2
+      addItemWithTitle('Find Previous', action: 'performFindPanelAction:', keyEquivalent: 'G').tag = 3
+      addItemWithTitle('Use Selection for Find', action: 'performFindPanelAction:', keyEquivalent: 'e').tag = 7
       addItemWithTitle('Jump to Selection', action: 'centerSelectionInVisibleArea:', keyEquivalent: 'j')
     end
 
