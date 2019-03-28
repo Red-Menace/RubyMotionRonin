@@ -4,8 +4,8 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/osx'
 
 begin
-  require 'bundler'
-  Bundler.require
+   require 'bundler'
+   Bundler.require
 rescue LoadError
 end
 
@@ -34,12 +34,12 @@ Motion::Project::App.setup do |app|  # (un)comment and change <items> as desired
 
    # app.codesign_for_development = true
    # app.development do
-     # app.codesign_certificate = 'Mac Developer: xxxxx'
+      # app.codesign_certificate = 'Mac Developer: xxxxx'
    # end
 
    # app.codesign_for_release = true
    # app.release do
-     # app.codesign_certificate = '3rd Party Mac Developer Application: xxxxx'
+      # app.codesign_certificate = '3rd Party Mac Developer Application: xxxxx'
    # end
 
 end

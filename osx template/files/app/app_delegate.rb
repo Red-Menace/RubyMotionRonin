@@ -5,7 +5,7 @@
 
 class AppDelegate
 
-  def buildWindow
+   def buildWindow
       windowMask = NSTitledWindowMask |
                    NSClosableWindowMask |
                    NSMiniaturizableWindowMask |
@@ -19,21 +19,22 @@ class AppDelegate
       @mainWindow.cascadeTopLeftFromPoint([20, 20]) # top left
       @mainWindow.contentView.addSubview(hello)
       @mainWindow.orderFrontRegardless
-  end
-  
-  
-  def hello
-   size = @mainWindow.frame.size.to_a
-   textFrame = [[20, 20], [size[0] - 40, size[1] - 60]] # size to window
-   NSTextField.alloc.initWithFrame(textFrame).tap do |obj|
-      obj.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable
-      obj.refusesFirstResponder = true
-      obj.font = NSFont.fontWithName("Noteworthy Bold", size:42)
-      obj.textColor = NSColor.redColor
-      obj.stringValue = "Hello, World\nWelcome to RubyMotion!"
-    end
-  end
-  
+   end
+
+
+   def hello
+      size = @mainWindow.frame.size.to_a
+      textFrame = [[20, 20], [size[0] - 40, size[1] - 60]] # size to window
+      NSTextField.alloc.initWithFrame(textFrame).tap do |obj|
+         obj.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable
+         obj.refusesFirstResponder = true
+         obj.usesFindPanel = true
+         obj.font = NSFont.fontWithName("Noteworthy Bold", size:42)
+         obj.textColor = NSColor.redColor
+         obj.stringValue = "Hello, World\nWelcome to RubyMotion!"
+      end
+   end
+
 
    ############################################################
    #  ――― Delegate Methods (number indicates call order) ―――  
@@ -82,3 +83,4 @@ class AppDelegate
    end
 
 end
+
