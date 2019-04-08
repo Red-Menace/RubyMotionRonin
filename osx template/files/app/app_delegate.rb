@@ -28,7 +28,7 @@ class AppDelegate
       NSTextField.alloc.initWithFrame(textFrame).tap do |obj|
          obj.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable
          obj.refusesFirstResponder = true
-         obj.usesFindPanel = true
+         obj.allowsEditingTextAttributes = true
          obj.font = NSFont.fontWithName("Noteworthy Bold", size:42)
          obj.textColor = NSColor.redColor
          obj.stringValue = "Hello, World\nWelcome to RubyMotion!"
