@@ -1,0 +1,33 @@
+#  encoding: utf-8
+
+#
+#  Project 'ExampleIB'
+#
+#  A sample/example for using an Interface Builder project
+#  for the main application window.
+#
+#
+
+
+$:.unshift('/Library/RubyMotion/lib')
+require 'motion/project/template/osx'
+
+# see the Gemfile for bundled gems, or require any other gems
+
+begin
+   require 'bundler'
+   Bundler.require
+rescue LoadError
+end
+
+# See RubyMotion Project Management Guide
+# also 'rake config' for complete project settings
+Motion::Project::App.setup do |app|
+   app.icon = 'Made with RM'  # CFBundleIconFile
+   app.identifier = 'com.your-company.ExampleIB'  # CFBundleIdentifier
+   app.name = 'ExampleIB'  # CFBundleName
+   app.short_version = '1.0.0'  # CFBundleShortVersionString
+   app.version = '1.000'  # CFBundleVersion
+   app.info_plist['NSMainNibFile'] = 'MainMenu'  # minimal main nib file
+end
+
