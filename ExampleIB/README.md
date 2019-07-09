@@ -30,7 +30,6 @@ You can edit/adapt the example project, or roll your own:
 app.info_plist['NSMainNibFile'] = ''  # the main nib file
 ```
 
-<br />
 The ExampleIB RubyMotion project includes an Xcode project for the user interface, and will build a simple test/example application with a couple of buttons and a text field.  It can be used as a base for your own custom template, if desired, just don't forget to update the paths (in the Xcode project) if you move the files around.  Templates can be placed into your user's **~/Library/RubyMotion/Template** folder so that they can be used with the `motion create` command.
 
 Also included is a small script that will extract the various IBOutlets and IBActions defined in the header to a text file, where they will be available to copy/paste into your application files.
