@@ -12,9 +12,9 @@ class PrefsController
    # ――― CONSTANTS and Attributes ―――
    ##################################################
 
-   PREFS_FRAME = [[400, 600], [275, 212]] # preferences window location and size
-   TEXT_FRAME = [[21, 60], [228, 22]]     # textField initial location and size
-   BUTTON_FRAME = [[175, 20], [80, 20]]   # button initial location and size
+   PREFS_FRAME = [[400, 600], [275, 220]] # preferences window location and size
+   TEXT_FRAME = [[21, 65], [228, 22]]     # textField initial location and size
+   BUTTON_FRAME = [[175, 20], [80, 24]]   # button initial location and size
    
    SHEET = true
    WHO = 'Hello, World'
