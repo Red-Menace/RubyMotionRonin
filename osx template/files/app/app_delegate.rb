@@ -5,13 +5,25 @@
 
 class AppDelegate
 
+   ##################################################
+   #  ――― CONSTANTS and Attributes ―――
+   ##################################################
+
+   WINDOW_FRAME = [[0, 0], [520, 300]]
+   TEXTVIEW_FRAME = [[20, 20], [480, 260]]
+
+
+   ##################################################
+   #  ――― Instance Methods ―――
+   ##################################################
+
    def buildWindow
       windowMask = NSTitledWindowMask |
                    NSClosableWindowMask |
                    NSMiniaturizableWindowMask |
                    NSResizableWindowMask
       @mainWindow = NSWindow.alloc
-                            .initWithContentRect( [[0, 0], [520, 300]],
+                            .initWithContentRect( WINDOW_FRAME,
                                        styleMask: windowMask,
                                          backing: NSBackingStoreBuffered,
                                            defer: false)
@@ -23,15 +35,19 @@ class AppDelegate
 
 
    def hello
-      size = @mainWindow.frame.size.to_a
-      textFrame = [[20, 20], [size[0] - 40, size[1] - 60]] # size to window
-      NSTextField.alloc.initWithFrame(textFrame).tap do |obj|
+      textView = NSTextView.alloc.initWithFrame(TEXTVIEW_FRAME).tap do |obj|
          obj.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable
-         obj.refusesFirstResponder = true
-         obj.allowsEditingTextAttributes = true
+         obj.allowsUndo = true
+         obj.usesFontPanel = true
+         obj.usesFindPanel = true
          obj.font = NSFont.fontWithName("Noteworthy Bold", size:42)
          obj.textColor = NSColor.redColor
-         obj.stringValue = "Hello, World\nWelcome to RubyMotion!"
+         obj.string = "Hello, World\nWelcome to RubyMotion!"
+      end
+      @scrollView = NSScrollView.alloc.initWithFrame(TEXTVIEW_FRAME).tap do |obj|
+         obj.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable
+         obj.borderType = NSBezelBorder
+         obj.documentView = textView
       end
    end
 

@@ -62,7 +62,7 @@ class AppDelegate
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle("Hide #{appName}", action: 'hide:', keyEquivalent: 'h')
          item = addItemWithTitle('Hide Others', action: 'hideOtherApplications:', keyEquivalent: 'H')
-         item.keyEquivalentModifierMask = NSCommandKeyMask|NSAlternateKeyMask
+         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('Show All', action: 'unhideAllApplications:', keyEquivalent: '')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle("Quit #{appName}", action: 'terminate:', keyEquivalent: 'q')
@@ -88,7 +88,7 @@ class AppDelegate
          addItemWithTitle('Copy', action: 'copy:', keyEquivalent: 'c')
          addItemWithTitle('Paste', action: 'paste:', keyEquivalent: 'v')
          item = addItemWithTitle('Paste and Match Style', action: 'pasteAsPlainText:', keyEquivalent: 'V')
-         item.keyEquivalentModifierMask = NSCommandKeyMask|NSAlternateKeyMask
+         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('Delete', action: 'delete:', keyEquivalent: '')
          addItemWithTitle('Select All', action: 'selectAll:', keyEquivalent: 'a')
          addItem(NSMenuItem.separatorItem)
@@ -107,9 +107,9 @@ class AppDelegate
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle('Show Ruler', action: 'toggleRuler:', keyEquivalent: '')
          item = addItemWithTitle('Copy Ruler', action: 'copyRuler:', keyEquivalent: 'c')
-         item.keyEquivalentModifierMask = NSCommandKeyMask|NSControlKeyMask
+         item.keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
          item = addItemWithTitle('Paste Ruler', action: 'pasteRuler:', keyEquivalent: 'v')
-         item.keyEquivalentModifierMask = NSCommandKeyMask|NSControlKeyMask
+         item.keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
       end
 
       addMenu('Format') do
@@ -120,7 +120,7 @@ class AppDelegate
 
       addMenu('View') do
          item = addItemWithTitle('Show Toolbar', action: 'toggleToolbarShown:', keyEquivalent: 't')
-         item.keyEquivalentModifierMask = NSCommandKeyMask|NSAlternateKeyMask
+         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('Customize Toolbar…', action: 'runToolbarCustomizationPalette:', keyEquivalent: '')
       end
 

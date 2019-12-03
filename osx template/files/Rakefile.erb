@@ -19,7 +19,7 @@ Motion::Project::App.setup do |app|  # (un)comment and change <items> as desired
    # app.copyright = 'Copyright © <year> <user>. All rights reserved.'  # NSHumanReadableCopyright
    # app.deployment_target = "<current system>"  # LSMinimumSystemVersion
    # app.entitlements = {}
-   # app.frameworks = ['AppKit', 'Foundation', 'CoreServices']
+   # app.frameworks = %w[Foundation AppKit CoreServices Security]
    app.icon = 'AppIcon'  # CFBundleIconFile
    app.identifier = 'com.yourcompany.<%= name %>'  # CFBundleIdentifier
    app.name = '<%= name %>'  # CFBundleName
