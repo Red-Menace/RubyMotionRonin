@@ -7,6 +7,9 @@
 //
 
 
+#import <Cocoa/Cocoa.h>
+
+
 @interface AppWindow : NSWindowController
 {
 //  Typical outlet signature: IBOutlet CocoaClass *accessorName;

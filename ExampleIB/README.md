@@ -15,7 +15,7 @@ Although there are a few interface styling gems around, most are for iOS.  Imple
 ## How ##
 You can edit/adapt the example project, or roll your own:
 
-- To create your own Interface Builder project from scratch, the first thing to do is open Xcode and create a new empty project in your RubyMotion project folder (I put them in Xcode project folders in the **vendor** directory).  Next, add a new Objective-C class file to the Xcode project - check the option to include a XIB for the user interface, and set the subclass to **NSWindowController** (access to the XIB will be via the controller instance).
+- To create your own Interface Builder project from scratch, the first thing to do is open Xcode and create a new empty project (**Cross-platform > Other > Empty**) in your RubyMotion project folder (I put them in Xcode project folders in the **vendor** directory).  Next, add a new Objective-C class file (**New > File... > Cocoa Class**) to the Xcode project - check the option to include a XIB for the user interface, and set the subclass to **NSWindowController** (access to the XIB will be via the controller instance).
 
 - In the IB Identity Inspector, set the class of the **File's Owner** to the name of your added Objective-C class - at this point any outlets and actions defined in the header file should show up in the IB Connections Inspector.  This header/proxy file will be edited to include the various IBOutlet and IBAction definitions that are going to be used in your RM project.
 
