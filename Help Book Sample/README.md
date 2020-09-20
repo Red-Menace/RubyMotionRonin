@@ -6,10 +6,11 @@ It also doesn't help that there can be multiple locations for help book resource
 
 This help book sample uses a generic structure and includes some example files, here are the steps that were used to create it:
 
-<ul>
 <li>
 Create a folder structure for the help book and add some content:  
-    
+</li>
+
+<ul>
 <pre>
 AppName/ [1]
    Contents/
@@ -24,7 +25,7 @@ AppName/ [1]
             page01.html [7]
             page02.html [7]
 </pre>
-</li>
+</ul>
 
 <ol>
 <li>
