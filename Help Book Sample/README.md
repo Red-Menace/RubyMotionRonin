@@ -104,7 +104,7 @@ Additional pages as desired (HTML 4.01 - HTML5)
 </li>
 
 <li>
-Once the help pages are built, use <code>hiutil</code> or the <strong>Help Indexer</strong> application (from the <strong>Xcode Additional Tools</strong> download) to generate an index file.  You can leave it with the default name (the localization folder) or give it a name of your choosing, just use the same name as the one set in the <strong>Info.plist</strong> - for the sample I have renamed the index file to <code>help.helpindex</code>.
+Once the help pages are built, use <code>hiutil</code> or the <strong>Help Indexer</strong> application (from the <strong>Xcode Additional Tools</strong> download) to generate an index file for the desired localization folder.  You can give it a name of your choosing, just use the same name as the one set in the <strong>Info.plist</strong> - for the sample I have renamed the index file to <code>help.helpindex</code>.
 </li>
 </ol>
 
