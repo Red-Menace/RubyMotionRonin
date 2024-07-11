@@ -1,0 +1,22 @@
+
+/* Generic Help Book template */
+
+
+/* common body properties */
+body {
+   font-family:Verdana, Arial, Helvetica, sans-serif;
+   padding:10px 0px 10px 0px;    /* top, right, bottom, left */
+}
+
+/* common header properties */
+h1, h2, h3, h4, h5, h6 {
+}
+
+/* header sizes */
+h1 {font-size:135%;}
+h2 {font-size:120%;}
+h3 {font-size:100%;}
+h4 {font-size:90%;}
+h5 {font-size:75%;}
+h6 {font-size:60%;}
+
