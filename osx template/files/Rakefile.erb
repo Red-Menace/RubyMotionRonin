@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
+#  encoding: utf-8
 
 $:.unshift("/Library/RubyMotion/lib")
+$:.unshift("~/.rubymotion/rubymotion-templates")  # use updated repo
 require 'motion/project/template/osx'
 
 begin
@@ -17,17 +18,18 @@ Motion::Project::App.setup do |app|  # (un)comment and change <items> as desired
 
    # app.category = 'utilities'  # LSApplicationCategoryType
    # app.copyright = 'Copyright © <year> <user>. All rights reserved.'  # NSHumanReadableCopyright
-   # app.deployment_target = "<current system>"  # LSMinimumSystemVersion
+   # app.deployment_target = "<system version>"  # LSMinimumSystemVersion
    # app.entitlements = {}
    # app.frameworks = %w[Foundation AppKit CoreServices Security]
    app.icon = 'AppIcon'  # CFBundleIconFile
    app.identifier = 'com.yourcompany.<%= name %>'  # CFBundleIdentifier
    app.name = '<%= name %>'  # CFBundleName
-   # app.sdk_version = '<SDK to use>'
+   # app.sdk_version = '<SDK to use>'  # SDK to build with (default is current)
    # app.short_version = '1.0.0'  # CFBundleShortVersionString (release version number)
    # app.version = '1.0.0'  # CFBundleVersion (build version number)
 
    # app.info_plist['NSMainNibFile'] = 'MainMenu'  # minimal main nib file, if using nibs
+
    # app.info_plist['key'] = ['value']  # other custom Info.plist key/value pairs
 
    # app.vendor_project(<library path>, <project type>)
