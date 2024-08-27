@@ -143,8 +143,9 @@ class AppDelegate
       NSApp.windowsMenu = addMenu('WINDOW:MENU'.localized) do
          addItemWithTitle('WINDOW:MINIMIZE'.localized, action: 'performMiniaturize:', keyEquivalent: 'm')
          addItemWithTitle('WINDOW:ZOOM'.localized, action: 'performZoom:', keyEquivalent: '')
-         addItem(NSMenuItem.separatorItem)  # just added items
+         addItem(NSMenuItem.separatorItem)
          addItemWithTitle('WINDOW:FRONT'.localized, action: 'arrangeInFront:', keyEquivalent: '')
+         # system adds any window names after a separator
       end.submenu
       
       NSApp.helpMenu = addMenu('HELP:MENU'.localized) do

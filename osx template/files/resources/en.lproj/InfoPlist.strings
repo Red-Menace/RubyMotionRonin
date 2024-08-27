@@ -1,0 +1,11 @@
+
+/* 
+   Localized Info.plist keys
+     
+   The encoding for this file should be UTF-8, which Xcode transcodes to UTF-16
+*/
+
+
+"CFBundleName" = "<app name>";
+"MDItemKeywords" = "<comma separated keyword items>";
+
