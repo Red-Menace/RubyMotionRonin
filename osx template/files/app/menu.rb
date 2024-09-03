@@ -39,8 +39,8 @@ class AppDelegate
          NSApp.servicesMenu = servicesItem.submenu = NSMenu.new
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle("#{'MAIN:HIDE'.localized} #{appName}", action: 'hide:', keyEquivalent: 'h')
-         item = addItemWithTitle('MAIN:OTHERS'.localized, action: 'hideOtherApplications:', keyEquivalent: 'H')
-         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
+         addItemWithTitle('MAIN:OTHERS'.localized, action: 'hideOtherApplications:', keyEquivalent: 'h')
+                         .keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('MAIN:SHOW'.localized, action: 'unhideAllApplications:', keyEquivalent: '')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle("#{'MAIN:QUIT'.localized} #{appName}", action: 'terminate:', keyEquivalent: 'q')
@@ -59,10 +59,14 @@ class AppDelegate
       end
       
       findMenu = createMenu('FIND:MENU'.localized) do  # Edit submenu
-         addItemWithTitle('FIND:FIND'.localized, action: 'performFindPanelAction:', keyEquivalent: 'f').tag = 1
-         addItemWithTitle('FIND:NEXT'.localized, action: 'performFindPanelAction:', keyEquivalent: 'g').tag = 2
-         addItemWithTitle('FIND:PREVIOUS'.localized, action: 'performFindPanelAction:', keyEquivalent: 'G').tag = 3
-         addItemWithTitle('FIND:SELECTION'.localized, action: 'performFindPanelAction:', keyEquivalent: 'e').tag = 7
+         addItemWithTitle('FIND:FIND'.localized, action: 'performFindPanelAction:', keyEquivalent: 'f')
+                         .tag = 1
+         addItemWithTitle('FIND:NEXT'.localized, action: 'performFindPanelAction:', keyEquivalent: 'g')
+                         .tag = 2
+         addItemWithTitle('FIND:PREVIOUS'.localized, action: 'performFindPanelAction:', keyEquivalent: 'G')
+                         .tag = 3
+         addItemWithTitle('FIND:SELECTION'.localized, action: 'performFindPanelAction:', keyEquivalent: 'e')
+                         .tag = 7
          addItemWithTitle('FIND:JUMP'.localized, action: 'centerSelectionInVisibleArea:', keyEquivalent: 'j')
       end
 
@@ -103,8 +107,8 @@ class AppDelegate
          addItemWithTitle('EDIT:CUT'.localized, action: 'cut:', keyEquivalent: 'x')
          addItemWithTitle('EDIT:COPY'.localized, action: 'copy:', keyEquivalent: 'c')
          addItemWithTitle('EDIT:PASTE'.localized, action: 'paste:', keyEquivalent: 'v')
-         item = addItemWithTitle('EDIT:MATCH'.localized, action: 'pasteAsPlainText:', keyEquivalent: 'V')
-         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
+         addItemWithTitle('EDIT:MATCH'.localized, action: 'pasteAsPlainText:', keyEquivalent: 'V')
+                         .keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('EDIT:DELETE'.localized, action: 'delete:', keyEquivalent: '')
          addItemWithTitle('EDIT:SELECT'.localized, action: 'selectAll:', keyEquivalent: 'a')
          addItem(NSMenuItem.separatorItem)
@@ -122,21 +126,21 @@ class AppDelegate
          addItemWithTitle('TEXT:RIGHT'.localized, action: 'alignRight:', keyEquivalent: '}')
          addItem(NSMenuItem.separatorItem)
          addItemWithTitle('TEXT:SHOW'.localized, action: 'toggleRuler:', keyEquivalent: '')
-         item = addItemWithTitle('TEXT:COPY'.localized, action: 'copyRuler:', keyEquivalent: 'c')
-         item.keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
-         item = addItemWithTitle('TEXT:PASTE'.localized, action: 'pasteRuler:', keyEquivalent: 'v')
-         item.keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
+         addItemWithTitle('TEXT:COPY'.localized, action: 'copyRuler:', keyEquivalent: 'c')
+                         .keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
+         addItemWithTitle('TEXT:PASTE'.localized, action: 'pasteRuler:', keyEquivalent: 'v')
+                         .keyEquivalentModifierMask = NSCommandKeyMask | NSControlKeyMask
       end
 
       formatMenu = addMenu('FORMAT:MENU'.localized) do
-         item = addItemWithTitle('FONT:MENU'.localized, action: nil, keyEquivalent: '')
-         item.submenu = NSFontManager.sharedFontManager.fontMenu(true)  # use system font menu
+         addItemWithTitle('FONT:MENU'.localized, action: nil, keyEquivalent: '')
+                         .submenu = NSFontManager.sharedFontManager.fontMenu(true)  # use system font menu
          addItem(textMenu)
       end
       
       addMenu('VIEW:MENU'.localized) do
-         item = addItemWithTitle('VIEW:SHOW'.localized, action: 'toggleToolbarShown:', keyEquivalent: 't')
-         item.keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
+         addItemWithTitle('VIEW:SHOW'.localized, action: 'toggleToolbarShown:', keyEquivalent: 't')
+                         .keyEquivalentModifierMask = NSCommandKeyMask | NSAlternateKeyMask
          addItemWithTitle('VIEW:CUSTOMIZE'.localized, action: 'runToolbarCustomizationPalette:', keyEquivalent: '')
       end
 
